@@ -31,10 +31,24 @@ public class Routes : MonoBehaviour
         }
     }
 
-    // Moving
-    void MoveToRoute(int routeNum)
+    // Find
+    Transform FindRoute(int num)
     {
-        currentRoute = Mathf.Clamp(routeNum, -routesAmount, routesAmount);
+        Transform lookupRoute = transform.Find(num.ToString());
+        if (lookupRoute)
+        {
+            return lookupRoute;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    // Move
+    public void MoveToRoute(int num)
+    {
+        currentRoute = Mathf.Clamp(num, -routesAmount, routesAmount);
 
         Transform desiredRoute = FindRoute(currentRoute);
         if (desiredRoute)
@@ -43,20 +57,6 @@ public class Routes : MonoBehaviour
             Vector3 desiredPosition = desiredRoute.position;
 
             playerEntity.transform.DOMove(new Vector3(desiredPosition.x, playerPosition.y, playerPosition.z), 0.3f);
-        }
-    }
-
-    // Finding
-    Transform FindRoute(int routeNum)
-    {
-        Transform lookupRoute = transform.Find(routeNum.ToString());
-        if (lookupRoute)
-        {
-            return lookupRoute;
-        }
-        else
-        {
-            return null;
         }
     }
 }
