@@ -18,6 +18,14 @@ public class Controls : MonoBehaviour
     // Update
     void Update()
     {
+        // Start Road
+        if (SwipeManager.IsSwiping() && (!RoadManager.i.isMoving))
+            {
+                RoadManager.i.RoadStart();
+                //return;
+            }
+
+        // Swiping Controls
         if (SwipeManager.IsSwipingLeft())
         {
             Routes.instance.ChangeRoute(-1);
