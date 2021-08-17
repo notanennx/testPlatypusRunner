@@ -13,6 +13,7 @@ public class RoadManager : MonoBehaviour
     public GameObject[] roadsLibrary;
 
     // Awake
+    public float roadSize = 30f;
     public static RoadManager i;
     void Awake()
     {
@@ -40,16 +41,16 @@ public class RoadManager : MonoBehaviour
             GameObject randomRoad = roadsLibrary[Random.Range (0, roadsLibrary.Length)];
 
             // Calculate
-            float addZ = (currentRoad.GetComponent<Collider>().bounds.size.z * 2f);
+            //float addZ = (currentRoad.GetComponent<Collider>().bounds.size.z * 2f);
+            float addZ = (roadSize * 2f);
             Vector3 newPosition = currentRoad.transform.position + new Vector3(0f, -10f, addZ);
 
             // Instantiate
             GameObject spawnedRoad = Instantiate(randomRoad, newPosition, Quaternion.identity);
                 spawnedRoad.transform.DOMoveY(0f, 0.4f);
 
-                Trigger roadTrigger = spawnedRoad.transform.Find("Spawn Trigger").gameObject.GetComponent<Trigger>();
-
-                    //roadTrigger.onTriggered
-            //print("We should spawn the road now!");
+                // Trigger
+                GameObject roadPlane = spawnedRoad.transform.Find("Plane").gameObject;
+                    Trigger roadTrigger = roadPlane.transform.Find("Spawn Trigger").gameObject.GetComponent<Trigger>();
         }
 }
