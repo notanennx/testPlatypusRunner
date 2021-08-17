@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 208605473}
   - component: {fileID: 208605474}
+  - component: {fileID: 208605475}
   m_Layer: 0
   m_Name: Controls
   m_TagString: Untagged
@@ -167,6 +168,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerEntity: {fileID: 984517734}
+--- !u!114 &208605475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208605472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4950350f71552740bbb2e4fd7c20171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSwipeLength: 0.66
+  triggerSwipeAtMinLength: 0
+  useEightDirections: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

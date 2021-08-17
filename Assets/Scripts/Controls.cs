@@ -18,19 +18,13 @@ public class Controls : MonoBehaviour
     // Update
     void Update()
     {
-        /*
-        if (Input.GetKeyDown("space"))
+        if (SwipeManager.IsSwipingLeft())
         {
-            Transform[] routesTransform = routesEntity.GetComponentsInChildren<Transform>();
-            foreach (Transform routeTransform in routesTransform)
-            {
-                if (routeTransform.gameObject.GetInstanceID() != routesEntity.GetInstanceID())
-                {
-                    //print(routeTransform.name);
-                }
-                
-            }
+            Routes.instance.ChangeRoute(-1);
         }
-        */
+        else if (SwipeManager.IsSwipingRight())
+        {
+            Routes.instance.ChangeRoute(1);
+        }
     }
 }

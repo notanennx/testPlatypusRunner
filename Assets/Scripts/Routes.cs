@@ -10,25 +10,11 @@ public class Routes : MonoBehaviour
     public int routesAmount;
     public GameObject playerEntity;
 
-    // Start
-    void Start()
+    // Awake
+    public static Routes instance;
+    void Awake ()
     {
-        //playerTransform = playerEntity.GetComponent<Transform>();
-        //playerRigidbody = playerEntity.GetComponent<Rigidbody>();
-    }
-
-    // Update
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            MoveToRoute(currentRoute - 1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            MoveToRoute(currentRoute + 1);
-        }
+        instance = this;
     }
 
     // Find
@@ -58,5 +44,11 @@ public class Routes : MonoBehaviour
 
             playerEntity.transform.DOMove(new Vector3(desiredPosition.x, playerPosition.y, playerPosition.z), 0.3f);
         }
+    }
+
+    // Change
+    public void ChangeRoute(int num)
+    {
+        MoveToRoute(currentRoute + num);
     }
 }
