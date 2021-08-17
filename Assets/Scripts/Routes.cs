@@ -42,7 +42,7 @@ public class Routes : MonoBehaviour
             Vector3 playerPosition = playerEntity.transform.position;
             Vector3 desiredPosition = desiredRoute.position;
 
-            playerEntity.transform.DOMove(new Vector3(desiredPosition.x, playerPosition.y, playerPosition.z), 0.3f);
+            playerEntity.transform.DOMove(new Vector3(desiredPosition.x, playerPosition.y, playerPosition.z), 0.2f);
         }
     }
 
