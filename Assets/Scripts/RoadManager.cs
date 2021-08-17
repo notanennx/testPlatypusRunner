@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using DG.Tweening;
+
 public class RoadManager : MonoBehaviour
 {
     public bool isMoving;
-    public float moveSpeed = 10f;
+    public float moveSpeed = 16f;
     public float currentSpeed = 0f;
 
     public GameObject[] roadsLibrary;
@@ -39,12 +41,14 @@ public class RoadManager : MonoBehaviour
 
             // Calculate
             float addZ = (currentRoad.GetComponent<Collider>().bounds.size.z * 2f);
-            Vector3 newPosition = currentRoad.transform.position + new Vector3(0f, 0f, addZ);
+            Vector3 newPosition = currentRoad.transform.position + new Vector3(0f, -10f, addZ);
 
             // Instantiate
             GameObject spawnedRoad = Instantiate(randomRoad, newPosition, Quaternion.identity);
+                spawnedRoad.transform.DOMoveY(0f, 0.4f);
+
                 Trigger roadTrigger = spawnedRoad.transform.Find("Spawn Trigger").gameObject.GetComponent<Trigger>();
-                
+
                     //roadTrigger.onTriggered
             //print("We should spawn the road now!");
         }
