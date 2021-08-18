@@ -34,7 +34,7 @@ public class CoinsDisplay : MonoBehaviour
     private void UpdateLabel()
     {
         coinsText.text = coinsAmount.ToString();
-        coinsText.rectTransform.DOPunchScale(new Vector3(1.1f, 1.1f, 1.1f), 0.3f, 4, 0.4f);
+        coinsText.rectTransform.DOPunchScale(new Vector3(1.05f, 1.05f, 1.05f), 0.3f, 4, 0.4f);
     }
 
 }

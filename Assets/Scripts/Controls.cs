@@ -22,7 +22,6 @@ public class Controls : MonoBehaviour
         if (SwipeManager.IsSwiping() && (!RoadManager.i.isMoving))
             {
                 RoadManager.i.RoadStart();
-                //return;
             }
 
         // Swiping Controls

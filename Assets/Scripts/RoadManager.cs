@@ -21,7 +21,7 @@ public class RoadManager : MonoBehaviour
     }
 
     // Roads
-    
+
         // Stop
         public void RoadStop()
         {
@@ -39,10 +39,13 @@ public class RoadManager : MonoBehaviour
         // Spawn
         public void RoadSpawn(GameObject currentRoad)
         {
+            // Select
             GameObject randomRoad = roadsLibrary[Random.Range (0, roadsLibrary.Length)];
 
+            // Progress
+            ProgressDisplay.i.Progress();
+
             // Calculate
-            //float addZ = (currentRoad.GetComponent<Collider>().bounds.size.z * 2f);
             float addZ = (roadSize * 2f);
             Vector3 newPosition = currentRoad.transform.position + new Vector3(0f, -10f, addZ);
 
