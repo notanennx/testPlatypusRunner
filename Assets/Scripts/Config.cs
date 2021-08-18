@@ -15,16 +15,4 @@ public class Config : MonoBehaviour
     {
         i = this;
     }
-
-    // Start
-    void Start()
-    {
-        
-    }
-
-    // Update
-    void Update()
-    {
-        
-    }
 }

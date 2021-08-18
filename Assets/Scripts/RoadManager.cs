@@ -7,6 +7,7 @@ using DG.Tweening;
 public class RoadManager : MonoBehaviour
 {
     public bool isMoving;
+    public bool isFinished = false;
     public float currentSpeed = 0f;
 
     public GameObject[] roadsLibrary;
@@ -27,6 +28,12 @@ public class RoadManager : MonoBehaviour
             currentSpeed = 0f;
 
             Player.i.SetAnimation("Idle");
+        }
+
+        // Boost
+        public void RoadBoost()
+        {
+
         }
 
         // Start

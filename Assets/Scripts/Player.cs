@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool isAlive = true;
     public Animator playerAnimator;
 
     // Awake
@@ -17,6 +18,15 @@ public class Player : MonoBehaviour
     public void SetAnimation(string name)
     {
         playerAnimator.SetTrigger(name);
+    }
+
+    // MeetEnemy
+    public void MeetEnemy(GameObject target)
+    {
+        RoadManager.i.RoadStop();
+
+        GUI.i.targetEnemy = target;
+        GUI.i.buttonsObject.SetActive(true);
     }
 
     // OnTriggerEnter

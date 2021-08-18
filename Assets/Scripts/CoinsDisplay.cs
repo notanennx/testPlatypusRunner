@@ -24,7 +24,7 @@ public class CoinsDisplay : MonoBehaviour
     }
 
     // Set
-    private void SetCoins(int amount)
+    public void SetCoins(int amount)
     {
         coinsAmount = amount;
         UpdateLabel();

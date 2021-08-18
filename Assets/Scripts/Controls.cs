@@ -18,6 +18,9 @@ public class Controls : MonoBehaviour
     // Update
     void Update()
     {
+        // Check
+        if ((!Player.i.isAlive) || (GUI.i.buttonsObject.activeSelf)) return;
+
         // Start Road
         if (SwipeManager.IsSwiping() && (!RoadManager.i.isMoving))
             {
