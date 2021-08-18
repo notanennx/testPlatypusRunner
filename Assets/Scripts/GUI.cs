@@ -5,7 +5,8 @@ using UnityEngine;
 public class GUI : MonoBehaviour
 {
     public GameObject targetEnemy;
-    public GameObject buttonsObject;
+    public GameObject enemyMenu;
+    public GameObject restartButton;
 
     // Awake
     public static GUI i;

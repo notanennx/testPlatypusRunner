@@ -17,6 +17,5 @@ public class Rotation : MonoBehaviour
     {
         transform.localPosition = new Vector3(0f, floatRange * Mathf.Sin(Time.time * floatSpeed), 0f);
         transform.Rotate(0f, (Time.deltaTime * (floatSpeed * 22.5f)), 0f, Space.World);
-        //transform.Rotate(Vector3(0f, Time.deltaTime * floatSpeed, 90f))
     }
 }

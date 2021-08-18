@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         RoadManager.i.RoadStop();
 
         GUI.i.targetEnemy = target;
-        GUI.i.buttonsObject.SetActive(true);
+        GUI.i.enemyMenu.SetActive(true);
     }
 
     // OnTriggerEnter

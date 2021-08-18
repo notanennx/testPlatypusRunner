@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class Controls : MonoBehaviour
 {
     public GameObject playerEntity;
@@ -15,14 +17,20 @@ public class Controls : MonoBehaviour
         playerRigidbody = playerEntity.GetComponent<Rigidbody>();
     }
 
+    // Reset
+    public void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // Update
     void Update()
     {
         // Check
-        if ((!Player.i.isAlive) || (GUI.i.buttonsObject.activeSelf)) return;
+        if ((!Player.i.isAlive) || (GUI.i.enemyMenu.activeSelf)) return;
 
         // Start Road
-        if (SwipeManager.IsSwiping() && (!RoadManager.i.isMoving))
+        if ((SwipeManager.IsSwiping() || Input.GetMouseButtonDown(0)) && (!RoadManager.i.isMoving))
             {
                 RoadManager.i.RoadStart();
             }
