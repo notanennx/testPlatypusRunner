@@ -8,8 +8,7 @@ using UnityEngine.UI;
 public class ProgressDisplay : MonoBehaviour
 {
     public Image fillerImage;
-    public int curProgress = 0;
-    public int maxProgress = 8;
+    private int curProgress = 0;
 
     // Awake
     public static ProgressDisplay i;
@@ -21,14 +20,14 @@ public class ProgressDisplay : MonoBehaviour
     // Progress
     public void Progress()
     {
-        curProgress = Mathf.Min(curProgress + 1, maxProgress);
+        curProgress = Mathf.Min(curProgress + 1, Config.i.RoadAmount);
     
         // Fill
-        float fillAmount = ((float)curProgress / (float)maxProgress);
+        float fillAmount = ((float)curProgress / (float)Config.i.RoadAmount);
         DOTween.To(x => fillerImage.fillAmount = x, fillerImage.fillAmount, fillAmount, 0.66f);
 
         // Stop
-        if (curProgress >= maxProgress)
+        if (curProgress >= Config.i.RoadAmount)
         {
             RoadManager.i.RoadStop();
         }

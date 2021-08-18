@@ -7,13 +7,11 @@ using DG.Tweening;
 public class RoadManager : MonoBehaviour
 {
     public bool isMoving;
-    public float moveSpeed = 16f;
     public float currentSpeed = 0f;
 
     public GameObject[] roadsLibrary;
 
     // Awake
-    public float roadSize = 30f;
     public static RoadManager i;
     void Awake()
     {
@@ -33,20 +31,20 @@ public class RoadManager : MonoBehaviour
         public void RoadStart()
         {
             isMoving = true;
-            currentSpeed = moveSpeed;
+            currentSpeed = Config.i.RoadSpeed;
         }
 
         // Spawn
         public void RoadSpawn(GameObject currentRoad)
         {
             // Select
-            GameObject randomRoad = roadsLibrary[Random.Range (0, roadsLibrary.Length)];
+            GameObject randomRoad = Config.i.RoadLibrary[Random.Range(0, Config.i.RoadLibrary.Length)];
 
             // Progress
             ProgressDisplay.i.Progress();
 
             // Calculate
-            float addZ = (roadSize * 2f);
+            float addZ = (Config.i.RoadSize * 2f);
             Vector3 newPosition = currentRoad.transform.position + new Vector3(0f, -10f, addZ);
 
             // Instantiate
