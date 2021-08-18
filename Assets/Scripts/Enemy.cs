@@ -15,19 +15,18 @@ public class Enemy : MonoBehaviour
     }
 
     // Hit
+    float[] jumpLength = {-16f, 16f};
     public void Hit()
     {
-        transform.DORotate(new Vector3(0f, 90f, 0f), 0.2f);
-        transform.DOLocalJump(transform.position + new Vector3(0f, 32f, 0f), 32f, 1, 06f);
-        //transform.DOJump(transform.position, 64f, 2, 1f, false);
+        transform.DORotate(new Vector3(0f, 180f, 0f), 0.2f);
+        transform.DOLocalJump(transform.position + new Vector3(jumpLength[Random.Range(0, jumpLength.Length)], -16f, 16f), 8f, 1, 1.2f);
 
         // Continue
         RoadManager.i.RoadStart();
-        print("Hit the enemy!");
     }
 
-    // Payoff
-    public void Payoff()
+    // Bribe
+    public void Bribe()
     {
         CoinsDisplay.i.SetCoins(0);
 
@@ -35,5 +34,9 @@ public class Enemy : MonoBehaviour
         Player.i.isAlive = false;
         Player.i.playerAnimator.SetTrigger("Dizzy");
         Player.i.transform.DORotate(new Vector3(0f, 180f, 0f), 0.6f);
+
+        // Enemy
+        animator.SetTrigger("Idle");
+        transform.DORotate(new Vector3(0f, 180f, 0f), 0.9f);
     }
 }

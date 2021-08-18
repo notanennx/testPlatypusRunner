@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 951336654}
   - component: {fileID: 951336653}
   m_Layer: 5
-  m_Name: Payoff
+  m_Name: Bribe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,9 +694,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084298911062357473, guid: 822e1dbcf80713842b64f99a30cf0cf6, type: 3}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: Payoff
+      - m_Target: {fileID: 1934848430}
+        m_TargetAssemblyTypeName: GUI, Assembly-CSharp
+        m_MethodName: BribeEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1498,13 +1498,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084298911062357473, guid: 822e1dbcf80713842b64f99a30cf0cf6, type: 3}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: Hit
-        m_Mode: 2
+      - m_Target: {fileID: 1934848430}
+        m_TargetAssemblyTypeName: GUI, Assembly-CSharp
+        m_MethodName: HitEnemy
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 3084298911062357479, guid: 822e1dbcf80713842b64f99a30cf0cf6, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

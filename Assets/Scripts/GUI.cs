@@ -13,4 +13,20 @@ public class GUI : MonoBehaviour
     {
         i = this;
     }
+
+    // Костыль, но в голову пока ничего лучше не пришло
+
+    // Hit
+    public void HitEnemy()
+    {
+        Enemy enemyScript = targetEnemy.GetComponent<Enemy>();
+            enemyScript.Hit();
+    }
+
+    // Bribe
+    public void BribeEnemy()
+    {
+        Enemy enemyScript = targetEnemy.GetComponent<Enemy>();
+            enemyScript.Bribe();
+    }
 }
