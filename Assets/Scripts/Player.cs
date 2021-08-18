@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start
-    void Start()
+    public Animator playerAnimator;
+
+    // Awake
+    public static Player i;
+    void Awake()
     {
-        
+        i = this;
     }
 
-    // Update
-    void Update()
+    // Animation
+    public void SetAnimation(string name)
     {
-        
+        playerAnimator.SetTrigger(name);
     }
 
     // OnTriggerEnter

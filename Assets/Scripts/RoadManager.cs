@@ -25,6 +25,8 @@ public class RoadManager : MonoBehaviour
         {
             isMoving = false;
             currentSpeed = 0f;
+
+            Player.i.SetAnimation("Idle");
         }
 
         // Start
@@ -32,6 +34,8 @@ public class RoadManager : MonoBehaviour
         {
             isMoving = true;
             currentSpeed = Config.i.RoadSpeed;
+
+            Player.i.SetAnimation("Running");
         }
 
         // Spawn

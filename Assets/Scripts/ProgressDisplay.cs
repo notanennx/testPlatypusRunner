@@ -30,6 +30,7 @@ public class ProgressDisplay : MonoBehaviour
         if (curProgress >= Config.i.RoadAmount)
         {
             RoadManager.i.RoadStop();
+            Player.i.SetAnimation("Dizzy");
         }
     }
 }
